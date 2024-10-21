@@ -6,6 +6,11 @@ Fast, reliable, and private way to convert speech into text directly on your dev
 
 ![hamster-app-subscription-image.jpeg](Images/hamster-app-subscription-image.jpeg)
 
+## Privacy Policy
+At Hamster Whisper, we are committed to protecting your privacy. We do not collect, store, or share any personal data from our users. All voice data processed by the app remains on your device, ensuring complete privacy.
+
+If you have any questions or concerns about our privacy practices, please feel free to contact us.
+
 ## Table of Contents
 - Known Issues
 - Current Features
