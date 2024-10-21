@@ -1,39 +1,69 @@
-# Hamster Whisper Support Docs (v1.0)
+# SupportDocs: DataSource
+This branch is where SupportDocs gets its data! You can add, edit, and delete documents here. For usage instructions, check out the `README`'s [usage](https://github.com/aheze/SupportDocs#using-the-github-repository) section in the main branch.
 
-Hamster Whisper offers a streamlined and user-friendly interface for converting audio files into accurate, readable transcripts with the transcribing process operating completely offline. By simply importing audio files in various formats, you can quickly and easily generate transcripts, making the process of turning speech into text hassle-free.
+## Data Source JSON URL
+<a href="https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json">https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json</a>
 
-Fast, reliable, and private way to convert speech into text directly on your device!
+<details markdown="1">
+<summary><strong>Show examples</strong></summary>
+
+<hr>
+
+### SwiftUI
+```swift
+struct SwiftUIExampleView_MinimalCode: View {
+    let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    @State var supportDocsPresented = false
+    
+    var body: some View {
+        Button("Present SupportDocs from SwiftUI!") { supportDocsPresented = true }
+        .sheet(isPresented: $supportDocsPresented, content: {
+            SupportDocsView(dataSource: dataSource, isPresented: $supportDocsPresented)
+        })
+    }
+}
+```
+
+### UIKit
+```swift
+class UIKitExampleController_MinimalCode: UIViewController {
+    /**
+    Connect this inside the storyboard.
+    
+    This is just for demo purposes, so it's not connected yet.
+    */
+    @IBAction func presentButtonPressed(_ sender: Any) {
+        let dataSource = URL(string: "https://raw.githubusercontent.com/aheze/SupportDocs/DataSource/_data/supportdocs_datasource.json")!
+    
+        let supportDocsViewController = SupportDocsViewController(dataSource: dataSource)
+        self.present(supportDocsViewController, animated: true, completion: nil)
+    }
+}
+```
+
+<hr>
+
+</details>
 
 ## Table of Contents
-- Known Issues
-- Current Features
-- Upcoming Features
-- Contact & Feedback
+- [404 Page](https://aheze.github.io/SupportDocs/404) (SupportDocs Integrated File) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/404.md))
+- [Apple smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Apple) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Apple.md))
+- [Blueberry smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Blueberry) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Blueberry.md))
+- [Buy blue boba](https://aheze.github.io/SupportDocs/Sample-Boba/BuyBlueBoba) (boba) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Boba/BuyBlueBoba.md))
+- [Buy cream boba](https://aheze.github.io/SupportDocs/Sample-Boba/BuyCreamBoba) (boba) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Boba/BuyCreamBoba.md))
+- [Buy orange boba](https://aheze.github.io/SupportDocs/Sample-Boba/BuyOrangeBoba) (boba) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Boba/BuyOrangeBoba.md))
+- [How to cook pizza](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToCookPizza) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToCookPizza.md))
+- [How to eat burritos](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToEatBurritos) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatBurritos.md))
+- [How to eat grilled cheese](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToEatGrilledCheese) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatGrilledCheese.md))
+- [How to eat nachos](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToEatNachos) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatNachos.md))
+- [How to eat tacos](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToEatTacos) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToEatTacos.md))
+- [How to make spaghetti](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToMakeSpaghetti) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToMakeSpaghetti.md))
+- [How to prepare ramen](https://aheze.github.io/SupportDocs/Sample-FastFood/HowToPrepareRamen) (fastFood) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-FastFood/HowToPrepareRamen.md))
+- [Peach smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Peach) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Peach.md))
+- [Plum smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/Plum) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/Plum.md))
+- [Red berry smoothie](https://aheze.github.io/SupportDocs/Sample-Smoothies/RedBerries) (smoothies) ([edit](https://github.com/aheze/SupportDocs/edit/DataSource/Sample-Smoothies/RedBerries.md))
 
-### Known Issues:
-- (To be listed)
 
-### Current Features:
-- Free Lite AI Model: Unlimited transcription with our lightweight AI, perfect for quick, reliable audio-to-text conversion at no cost!
-- Enjoy a 7-day free trial to explore our premium AI models with no ads, and upgrade to full access for a super-low monthly fee! If you find the app useful, your support through a subscription will help us continue improving it and keep it sustainable within the App Store ecosystem.
-- Offline Transcription: Efficiently convert audio formats into high-quality text using advanced speech recognition. All audio processing and transcription are done on-device, ensuring complete privacy and no need for an internet connection. Note that an internet connection is required for downloading AI models.
-- Simple UI: A clean, intuitive interface that lets users import audio files with just a few taps.
-- Powered by Whisper: Leverages OpenAI's Whisper model for state-of-the-art speech recognition, ensuring precise and accurate transcriptio
-
-### Use Cases:
-- Content Creators: Easily transcribe podcasts, interviews, or videos for editing, captioning, or repurposing content.
-- Journalists & Writers: Convert recorded interviews and notes into text to streamline the writing and research process.
-- Students & Researchers: Record lectures or meetings and transform them into transcripts for better note-taking and review.
-- Accessibility: Assist those with hearing impairments by providing transcripts of audio or video content.
-
-### Upcoming Features:
-- Live Streaming: Transcribe audio in real-time as it is being recorded. This feature will allow you to convert streaming audio, such as live podcasts, meetings, or lectures, directly into text on the spot—ideal for users who need instant transcripts without delays.
-- On-Device AI Chatbot: Interact with an AI assistant right from within the app to gain deeper insights into your transcriptions. This feature will let you ask the AI questions about the transcript, such as:
-    - "Summarize the key points"
-    - "Highlight the most important action items."
-- Video-to-Text Transcription: Import Video files and transcribe them into text.
-- Multilingual Transcription: Support for transcription in multiple languages, making the app accessible to a global audience. Whether you need transcripts in English, Spanish, French, or other languages, the app will allow you to generate accurate text in your preferred language, helping break language barriers.
-
-### Contact & Feedback
-For more features requests, ideas or bug report, please contact us via beastob.mark1@gmail.com
-Discord Channel will be setup once we have enough users.
+## Notes
+- Your changes make take up to five minutes to deploy. You can track the deployment progress [here](https://github.com/aheze/SupportDocs/deployments/activity_log?environment=github-pages).
+- Do **not** update this file (`README.md`) directly. Your changes will be overriden the next time you push (the GitHub Action will regenerate this file). Instead, update the file in [`_scripts/README.md`](https://github.com/aheze/SupportDocs/edit/DataSource/_scripts/README.md). 
