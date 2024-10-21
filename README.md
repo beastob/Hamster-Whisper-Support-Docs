@@ -38,4 +38,5 @@ Fast, reliable, and private way to convert speech into text directly on your dev
 
 ### Contact & Feedback
 For more features requests, ideas or bug report, please contact us via beastob.mark1@gmail.com
+
 Discord Channel will be setup once we have enough users.
